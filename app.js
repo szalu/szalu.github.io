@@ -18,7 +18,9 @@ var indexRoutes         = require("./routes/index");
 
 
 
-mongoose.connect("mongodb://localhost/yelp_camp_v5", {useMongoClient: true});
+//mongoose.connect("mongodb://localhost/yelp_camp_v5", {useMongoClient: true});
+mongoose.connect("mongodb://lukasz:cat@ds121716.mlab.com:21716/yelpcamp", {useMongoClient: true});
+mongodb://lukasz:cat@ds121716.mlab.com:21716/yelpcamp
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
