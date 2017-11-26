@@ -19,9 +19,10 @@ var indexRoutes         = require("./routes/index");
 
 console.log(process.env.DATABASEURL);
 
-mongoose.connect("process.env.DATABASEURL", {useMongoClient: true});
+mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
+// mongoose.connect(process.env.DATABASEURL);
 // mongoose.connect("mongodb://lukasz:cat@ds121716.mlab.com:21716/yelpcamp", {useMongoClient: true});
-process.env.databaseURL
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
