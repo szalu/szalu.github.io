@@ -65,7 +65,7 @@ cloudinary.uploader.upload(req.file.path, function(result) {
       req.flash('error', err.message);
       return res.redirect('back');
     }
-    res.redirect('/campgrounds/' + campground.id);
+    res.redirect('/cats/' + campground.id);
   });
 });
 });
@@ -105,10 +105,10 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
     // find and update the correct campground
     Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedCampground){
        if(err){
-           res.redirect("/campgrounds");
+           res.redirect("/cats");
        } else {
            //redirect somewhere(show page)
-           res.redirect("/campgrounds/" + req.params.id);
+           res.redirect("/cats/" + req.params.id);
        }
     });
 });
@@ -117,9 +117,9 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
 router.delete("/:id", middleware.checkCampgroundOwnership, function(req, res){
     Campground.findByIdAndRemove(req.params.id, function(err){
         if(err){
-            res.redirect("/campgrounds");
+            res.redirect("/cats");
         } else {
-            res.redirect("/campgrounds");
+            res.redirect("/cats");
         }
     });
 });
