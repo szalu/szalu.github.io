@@ -36,6 +36,7 @@ app.use(require("express-session")({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.locals.moment = require('moment');
 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
@@ -50,8 +51,8 @@ app.use(function(req, res, next){
 });
 
 app.use("/", indexRoutes);
-app.use("/campgrounds", campgroundRoutes);
-app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/cats", campgroundRoutes);
+app.use("/cats/:id/comments", commentRoutes);
 
 
 

@@ -15,3 +15,7 @@
 .delete-form {
     display: inline;
 }
+
+.navbar {
+    z-index: 2;
+}
